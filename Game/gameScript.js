@@ -5,16 +5,27 @@ const cardScore = document.getElementById("card-score");
 //Returns a drawing context on the canvas
 const ctx = canvas.getContext('2d');
 
-function startGame() {
-    //Allocate memory via function call
-    player = new Player(150,350,50,"black");
-    arrayBlocks = [];
-    //Initial score number
-    score = 0;
-    //Speed of red blocks increases
-    scoreIncrement = 0;
-    //Speed of red blocks
-    enemySpeed = 5;
-    //How often red blocks appear
-    presetTime = 1000;
+//Draw the ground line
+function drawBackgroundLine() {
+    //Set x and y coordinates - from
+    ctx.moveTo(0,400);
+
+    //Set x and y coordinates - to
+    ctx.lineTo(800,400);
+    
+    ctx.lineWidth = 1.9;
+    ctx.stroke();
 }
+
+let animationId = null;
+
+//Recursive function
+function animate() {
+    animationId = requestAnimationFrame(animate);
+
+    //Clear previous action
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drawBackgroundLine();
+}
+
+animate();
