@@ -89,6 +89,26 @@ class Player {
 
 }  
 
+class AvoidBlock {
+    constructor(size, speed){
+        this.x = canvas.width + size;
+        this.y = 400 - size;
+        this.size = size;
+        this.color = "red";
+        this.slideSpeed = speed;
+    }
+
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x,this.y,this.size,this.size);
+    }
+
+    slide() {
+        this.draw();
+        this.x -= this.slideSpeed;
+    }
+}
+
 function startGame() {
     //Allocate memory via function call
     player = new Player(150,350,50,"black");
@@ -101,6 +121,33 @@ function startGame() {
     enemySpeed = 5;
     //How often red blocks appear
     presetTime = 1000;
+}
+
+//Returns true of colliding
+function enemyMovement(player,block) {
+    let enemies = Object.create(block);
+
+    //Perfect collision detection
+    enemies.size -= 5;
+    enemies.x += 1;
+    enemies.y -= 2;
+
+    return !(
+        //Player is to the right of enemy
+        player.x>enemies.x+enemies.size ||
+        //Player is above of enemy
+        player.y+player.size<enemies.y ||
+        //Player is to the left of enemy
+        player.x+player.size<enemies.x 
+    )
+}
+
+//Returns true if past player past block
+function isPastBlock(player, block) {
+    return(
+        player.x + (player.size / 2) > block.x + (block.size / 4) &&
+        player.x + (player.size / 2) < block.x + (block.size / 4) * 3
+    )
 }
 
 //Draw the ground line
