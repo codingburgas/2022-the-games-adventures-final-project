@@ -1,9 +1,19 @@
-const canvas = document.getElementById("canvas");
 const card = document.getElementById("card");
 const cardScore = document.getElementById("card-score");
 
 //Returns a drawing context on the canvas
-const ctx = canvas.getContext('2d');
+const ctx = document.getElementById("canvas").getContext('2d');
+
+let player = null;
+let score = 0;
+//Used to see if user has scored another 10 points or not
+let scoreIncrement = 0;
+let arrayBlocks = [];
+//Enemy can speed up when player has scored points at intervals of 10
+let enemySpeed = 0;
+//Blocks don't score more then one point at a time
+let canScore = true;
+let presetTime = 0;
 
 class Player {
     constructor(x,y,size,color) {
@@ -77,6 +87,20 @@ class Player {
         ctx.translate(-offsetXPosition,-offsetYPosition);
     }
 
+}  
+
+function startGame() {
+    //Allocate memory via function call
+    player = new Player(150,350,50,"black");
+    arrayBlocks = [];
+    //Initial score number
+    score = 0;
+    //Speed of red blocks increases
+    scoreIncrement = 0;
+    //Speed of red blocks
+    enemySpeed = 5;
+    //How often red blocks appear
+    presetTime = 1000;
 }
 
 //Draw the ground line
@@ -91,15 +115,25 @@ function drawBackgroundLine() {
     ctx.stroke();
 }
 
+function drawScore() {
+    ctx.font = "80px Arial";
+    ctx.fillStyle = "black";
+    let scoreString = score.toString();
+    let xOffset = ((scoreString.length - 1) * 20);
+    ctx.fillText(scoreString, 375 - xOffset, 100);
+}
+
 let animationId = null;
 
 //Recursive function
 function animate() {
     animationId = requestAnimationFrame(animate);
-
     //Clear previous action
     ctx.clearRect(0,0,canvas.width,canvas.height);
     drawBackgroundLine();
+    drawScore();
+    //Foreground
+    player.draw();
 }
-
+startGame();
 animate();
