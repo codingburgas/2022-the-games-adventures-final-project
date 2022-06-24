@@ -150,6 +150,27 @@ function isPastBlock(player, block) {
     )
 }
 
+//Auto generate blocks
+function generateBlocks() {
+    let timeDelay = randomInterval(presetTime);
+    arrayBlocks.push(new AvoidBlock(50, enemySpeed));
+    setTimeout(generateBlocks, timeDelay);
+}
+
+function getRandomNumber(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomInterval(timeInterval) {
+    let returnTime = timeInterval;
+    if(Math.random() < 0.5){
+        returnTime += getRandomNumber(presetTime / 3, presetTime * 1.5);
+    }else{
+        returnTime -= getRandomNumber(presetTime / 5, presetTime / 2);
+    }
+    return returnTime;
+}
+
 //Draw the ground line
 function drawBackgroundLine() {
     //Set x and y coordinates - from
@@ -170,6 +191,19 @@ function drawScore() {
     ctx.fillText(scoreString, 375 - xOffset, 100);
 }
 
+function shouldIncreaseSpeed() {
+    //Check to see if game speed should be increased
+    if(scoreIncrement + 10 === score){
+        scoreIncrement = score;
+        enemySpeed++;
+        presetTime >= 100 ? presetTime -= 100 : presetTime = presetTime / 2;
+        //Update speed of existing blocks
+        arrayBlocks.forEach(block => {
+            block.slideSpeed = enemySpeed;
+        });
+    }
+}
+
 let animationId = null;
 
 //Recursive function
@@ -182,6 +216,7 @@ function animate() {
     //Foreground
     player.draw();
 }
+
 startGame();
 animate();
 
