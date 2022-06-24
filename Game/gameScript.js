@@ -137,3 +137,14 @@ function animate() {
 }
 startGame();
 animate();
+
+//Event Listeners
+addEventListener("keydown", e => {
+    if(e.code === 'Space'){
+        if(!player.shouldJump){
+            player.jumpCounter = 0;
+            player.shouldJump = true;
+            canScore = true;
+        }
+    }
+});

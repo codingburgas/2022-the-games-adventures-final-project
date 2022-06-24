@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gameStyle.css"/>
+    <title>Game</title>
+</head>
+<body>
+    <section id="overlay">
+        <div id="card">
+          <p>You Scored: <span id="card-score">0</span></p>
+          <button onclick="">Play Again?</button>
+        </div>
+      </section>
+      
+      <canvas width="800" height="600" id="canvas"></canvas>
+    <script src="gameScript.js"></script>
+</body>
+</html>
