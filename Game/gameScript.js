@@ -259,3 +259,11 @@ addEventListener("keydown", e => {
         }
     }
 });
+
+//Restart game
+function restartGame(button) {
+    card.style.display = "none";
+    button.blur();
+    startGame();
+    requestAnimationFrame(animate);
+}
