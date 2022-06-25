@@ -29,7 +29,7 @@ class Player {
         //Related to spin animation
         this.spin = 0;
         //Get a perfect 90 degree rotation
-        this.spinIncrement = 90 / 35;
+        this.spinIncrement = 90 / 32;
     }
 
     draw() {
@@ -124,13 +124,13 @@ function startGame() {
 }
 
 //Returns true of colliding
-function enemyMovement(player,block) {
+function playerColliding(player,block) {
     let enemies = Object.create(block);
 
     //Perfect collision detection
-    enemies.size -= 5;
-    enemies.x += 1;
-    enemies.y -= 2;
+    enemies.size -= 10;
+    enemies.x += 10;
+    enemies.y += 10;
 
     return !(
         //Player is to the right of enemy
@@ -215,10 +215,39 @@ function animate() {
     drawScore();
     //Foreground
     player.draw();
+
+    //Check to see if game speed should be increased
+    shouldIncreaseSpeed();
+
+    arrayBlocks.forEach((arrayBlock, index) => {
+        arrayBlock.slide();
+        //End game as player and enemy have collided
+        if(playerColliding(player, arrayBlock)){
+            cardScore.textContent = score;
+            card.style.display = "block";
+            cancelAnimationFrame(animationId);
+        }
+        //User should score a point if this is the case
+        if(isPastBlock(player, arrayBlock) && canScore){
+            canScore = false;
+            score++;
+            
+        }
+
+        //Delete block that has left the screen
+        if((arrayBlock.x + arrayBlock.width) <= 0){
+            setTimeout(() => {
+                arrayBlocks.splice(index, 1);
+            }, 0)
+        }
+    });
 }
 
 startGame();
 animate();
+setTimeout(() => {
+    generateBlocks();
+}, randomInterval(presetTime))
 
 //Event Listeners
 addEventListener("keydown", e => {
