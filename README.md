@@ -1,6 +1,6 @@
 <h1 align = "center"> Polygine </h1>
 
-#🎮 About our game 🎮
+# 🎮 About our game 🎮
 Our team created Jump and Run Game, using HTML, CSS and JavaScript. You have to skip obstacles: mushrooms and rocks. <br> 
 You have to use Space button to jump. An indicator counts your score and shows it when the game is over.
 
