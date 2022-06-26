@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+footer{
+    position: static;
+    bottom:0;
+    width: 100%;
+    background-color: #2d2a30;
+    padding: 50px 0; 
+    line-height: 1.5;
+    font-family: 'Heebo', sans-serif;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between  ;
+}
+
+.footerTitle,.row{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+/*footer columns*/
+
+.footerTitle h3{
+    color: #ffff;
+   font-size: 25px;
+   letter-spacing: 3px;
+}
+
+hr{
+    border-color:#8f9296;
+    background-color:#8f9296;
+    height: 3px;
+}
+
+
+.footer-copyright, .footer-links{
+    display: inline;
+}
+
+.footer-links{
+    color: #fff;
+    margin-left: 20px;
+}
+
+.footer-left .footer-links a{
+   display: inline-block;
+   line-height: 1.8;
+}
+
+.footer-left .footer-copyright{
+    color: #8f9296;
+   font-size: 18px;
+   font-weight: normal;
+}
+
+.footer-left{
+    width: 65%;
+    margin-top: 2%;
+    padding: 0 15px;
+}
