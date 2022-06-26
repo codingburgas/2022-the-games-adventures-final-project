@@ -37,12 +37,11 @@ nav{
 	align-items: center;
 	min-height: 8vh;
 	padding: 0.5% 3% 0.5% 3%;
-	background-color: #bab1c238;
+	background-color: #bebebee3;
     font-family: 'Heebo', sans-serif;
 	width: 100%;
 	z-index: 100;
 	transition: top 0.3s;
-    backdrop-filter: blur(5px);
 }
 
 #logo{
@@ -131,7 +130,7 @@ nav{
 		transform: translateX(100%);
 		transition: transform 0.5s ease-in;
         z-index: 2;
-        background-color: #bab1c22f;
+        background-color: #bebebe7a;
 	}
 	
 	.nav-links li{

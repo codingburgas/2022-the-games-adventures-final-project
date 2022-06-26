@@ -63,6 +63,20 @@ font-size: 20px;
 cursor: pointer;
 }
 
+@media screen and (max-width: 1300px){
+	#canvas{
+    width: 1170px;
+    height: 750px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+	#canvas{
+    width: 1100px;
+    height: 750px;
+  }
+}
+
 @keyframes cardIn {
   0% {
     opacity: 0;
