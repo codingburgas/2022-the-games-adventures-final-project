@@ -1,4 +1,6 @@
-<h1 align = "center"> Polygine </h1>
+<h1 align = "center"> 
+<img src="https://cdn.discordapp.com/attachments/988516348919431252/990700593561624687/logo.png" width=50% height=50%>
+</h1>
 
 # 🎮 About our game 🎮
 Our team created Jump and Run Game, using HTML, CSS and JavaScript. You have to skip obstacles: mushrooms and rocks. <br> 
