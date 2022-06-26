@@ -3,9 +3,11 @@
 let lastScrollTop = 0;
 
 navbar = document.getElementById("navbar");
+/*function on scrolling*/
 window.addEventListener("scroll", function(){
     let scrollTop = this.window.pageYOffset || document.documentElement.scrollTop;
 
+    /*hide navbar if lastScroll is smaller than current Scroll location and show if it is bigger*/
     if(scrollTop > lastScrollTop){
         navbar.style.top = "-80px";
     }
