@@ -7,6 +7,9 @@
 	cursor: url('../images/cursor.png'),auto;
 }
 
+html{
+	scroll-behavior: smooth;
+}
 
 ::selection {
 	color: #8d4855;

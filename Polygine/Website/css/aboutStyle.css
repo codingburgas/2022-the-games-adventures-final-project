@@ -4,16 +4,17 @@
 /*About section style*/
 .aboutSection{
 	width: 100%;
-	min-height: 100vh;
+	display: flex;
+	min-height: auto;
 	background-color: #ddd;
 	font-family: 'Nunito', sans-serif;
+	padding-top: 15vh;
 }
 
 .cntr{
 	width: 80%;
 	display: block;
 	margin:auto;
-	padding-top: 100px;
 }
 
 .cnt-section{
@@ -25,10 +26,11 @@
 .image-section{
 	float: right;
 	width: 40%;
+	margin-bottom: 5%;
 }
 
 .image-section img{
-	margin-top: 27%;
+	margin-top: 3%;
 	width: 120%;
 	height: 100%;
 }
@@ -71,13 +73,23 @@
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 4px 2px;
 	border-radius: 6px;
-	margin-top: 1%;
+	margin-top: 5%;
+	margin-bottom: 3%;
 }
 
 /*Responsiveness*/
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1400px)
+{
+	.image-section img{
+		margin-top: 10%;
+		width: 120%;
+		height: 100%;
+		margin-bottom: 5%;
+	}
+}
+
+@media screen and (max-width: 1250px){
 		.cntr{
 		width: 80%;
 		display: block;
