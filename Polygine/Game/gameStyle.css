@@ -37,7 +37,7 @@ text-align: center;
 #overlay #card {
 background-color: #8d8d8dbd;
 width: 500px;
-height: 190px;
+height: 235px;
 border-radius: 5px;
 display: none;
 animation: cardIn 1s forwards;
@@ -55,6 +55,7 @@ color: #fff;
 border: none;
 background-color: #913848;
 padding: 10px;
+margin-bottom: 10px;
 width: 90%;
 border-radius: 20px;
 font-size: 20px;
