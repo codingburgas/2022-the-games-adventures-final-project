@@ -73,11 +73,7 @@ class AvoidBlock {
     }
 
     draw() {
-        if(this.height > 60 && this.width > 45)
-        {
-            ctx.drawImage(mushroomImage,this.x - this.width + 10 ,this.y  - this.height + 20,this.width * 2.5, this.height * 2.5)
-        }
-        else if(this.height > 60 && this.width <= 45)
+        if(this.height > 60)
         {
             ctx.drawImage(mushroomImage,this.x - this.width + 10 ,this.y  - this.height + 20,this.width * 2.5, this.height * 2.5)
         }
