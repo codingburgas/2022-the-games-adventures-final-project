@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+/*About section style*/
 .aboutSection{
 	width: 100%;
 	min-height: 100vh;
@@ -20,6 +21,7 @@
 	width: 55%;
 }
 
+/*Set style to image*/
 .image-section{
 	float: right;
 	width: 40%;
@@ -59,6 +61,7 @@
 	color:#3d3d3d;
 }
 
+/*Play button style*/
 .play{
 	background-color: #913848;
 	border: none;
@@ -73,8 +76,7 @@
 	margin-top: 1%;
 }
 
-
-
+/*Responsiveness*/
 @media screen and (max-width: 900px){
 		.cntr{
 		width: 80%;
@@ -82,32 +84,36 @@
 		margin:auto;
 		padding-top:50px;
 	}
+
 	.cnt-section{
 		float: none;
 		width: 100%;
 		display: block;
 		margin:auto;
 	}
+
 	.image-section{
 		float:none;
 		width:100%;
 		
 	}
+
 	.image-section img{
 		width: 100%;
 		height: auto;
 		display: block;
 		margin:auto;
 	}
+
 	.cnt-section .cnt .btn{
 		text-align: center;
 	}
+
 	.cnt-section .cnt .btn a{
 		padding:9px 30px;
 	}
+
 	.cnt-section .social{
 		text-align: center;
 	}
-	
-	
 }
