@@ -1,8 +1,9 @@
+//Returns a drawing context on the canvas
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext('2d');
+
 const card = document.getElementById("card");
 const cardScore = document.getElementById("card-score");
-
-//Returns a drawing context on the canvas
-const ctx = document.getElementById("canvas").getContext('2d');
 
 let player = null;
 let score = 0;
@@ -90,17 +91,18 @@ class Player {
 }  
 
 class AvoidBlock {
-    constructor(size, speed){
-        this.x = canvas.width + size;
-        this.y = 400 - size;
-        this.size = size;
+    constructor(width, height, speed){
+        this.height = height;
+        this.width = width;
+        this.x = canvas.width + width;
+        this.y = 400 - height;
         this.color = "red";
         this.slideSpeed = speed;
     }
 
     draw() {
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x,this.y,this.size,this.size);
+        ctx.fillRect(this.x,this.y,this.width,this.height);
     }
 
     slide() {
@@ -111,7 +113,7 @@ class AvoidBlock {
 
 function startGame() {
     //Allocate memory via function call
-    player = new Player(150,350,50,"black");
+    player = new Player(150,350,50);
     arrayBlocks = [];
     //Initial score number
     score = 0;
@@ -120,46 +122,49 @@ function startGame() {
     //Speed of red blocks
     enemySpeed = 5;
     //How often red blocks appear
-    presetTime = 1000;
+    presetTime = 1300;
+}
+
+function getRandomNumber(min,max){
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 //Returns true of colliding
-function playerColliding(player,block) {
-    let enemies = Object.create(block);
-
-    //Perfect collision detection
-    enemies.size -= 10;
-    enemies.x += 10;
-    enemies.y += 10;
-
+function playerColliding(player,block){
+    let playerObj = Object.assign(Object.create(Object.getPrototypeOf(player)), player);
+    let enemyObj = Object.assign(Object.create(Object.getPrototypeOf(block)), block);
+    //Don't need pixel perfect collision detection
+    playerObj.size= playerObj.size - 10;
+    enemyObj.width = enemyObj.width - 10;
+    enemyObj.height = enemyObj.height - 10;
+    enemyObj.x = enemyObj.x + 10;
+    enemyObj.y = enemyObj.y + 10;
     return !(
-        //Player is to the right of enemy
-        player.x>enemies.x+enemies.size ||
-        //Player is above of enemy
-        player.y+player.size<enemies.y ||
-        //Player is to the left of enemy
-        player.x+player.size<enemies.x 
+        playerObj.x>enemyObj.x+enemyObj.width || 
+        //player is to the right of enemy
+        playerObj.x+playerObj.size<enemyObj.x || 
+        //player to the left of enemy
+        playerObj.y+playerObj.size<enemyObj.y 
+        //player is above enemy
     )
 }
 
 //Returns true if past player past block
-function isPastBlock(player, block) {
+function isPastBlock(player, block){
     return(
-        player.x + (player.size / 2) > block.x + (block.size / 4) &&
-        player.x + (player.size / 2) < block.x + (block.size / 4) * 3
+        player.x + (player.size / 2) > block.x + (block.width / 4) && 
+        player.x + (player.size / 2) < block.x + (block.width / 4) * 3
     )
 }
+
 
 //Auto generate blocks
 function generateBlocks() {
     let timeDelay = randomInterval(presetTime);
-    arrayBlocks.push(new AvoidBlock(50, enemySpeed));
+    arrayBlocks.push(new AvoidBlock(getRandomNumber(50, 80),getRandomNumber(45, 60), enemySpeed));
     setTimeout(generateBlocks, timeDelay);
 }
 
-function getRandomNumber(min,max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function randomInterval(timeInterval) {
     let returnTime = timeInterval;
@@ -171,29 +176,18 @@ function randomInterval(timeInterval) {
     return returnTime;
 }
 
-//Draw the ground line
-function drawBackgroundLine() {
-    //Set x and y coordinates - from
-    ctx.moveTo(0,400);
-
-    //Set x and y coordinates - to
-    ctx.lineTo(800,400);
-    
-    ctx.lineWidth = 1.9;
-    ctx.stroke();
-}
-
 function drawScore() {
     ctx.font = "80px Arial";
     ctx.fillStyle = "black";
     let scoreString = score.toString();
     let xOffset = ((scoreString.length - 1) * 20);
-    ctx.fillText(scoreString, 375 - xOffset, 100);
+    ctx.fillText(scoreString, 280 - xOffset, 100);
 }
+
 
 function shouldIncreaseSpeed() {
     //Check to see if game speed should be increased
-    if(scoreIncrement + 10 === score){
+    if(scoreIncrement + 15 === score){
         scoreIncrement = score;
         enemySpeed++;
         presetTime >= 100 ? presetTime -= 100 : presetTime = presetTime / 2;
@@ -209,29 +203,28 @@ let animationId = null;
 //Recursive function
 function animate() {
     animationId = requestAnimationFrame(animate);
-    //Clear previous action
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    drawBackgroundLine();
+    //Canvas Logic
     drawScore();
     //Foreground
     player.draw();
-
     //Check to see if game speed should be increased
     shouldIncreaseSpeed();
 
     arrayBlocks.forEach((arrayBlock, index) => {
         arrayBlock.slide();
+        
         //End game as player and enemy have collided
         if(playerColliding(player, arrayBlock)){
             cardScore.textContent = score;
             card.style.display = "block";
             cancelAnimationFrame(animationId);
+            clearInterval(backgroundID);
         }
         //User should score a point if this is the case
         if(isPastBlock(player, arrayBlock) && canScore){
             canScore = false;
             score++;
-            
         }
 
         //Delete block that has left the screen
@@ -243,6 +236,7 @@ function animate() {
     });
 }
 
+//Call first time on document load
 startGame();
 animate();
 setTimeout(() => {
