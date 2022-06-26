@@ -37,10 +37,7 @@ nav{
 }
 
 #logo{
-	font-size: 26px;
-	font-family: 'Heebo', sans-serif;
-	font-weight: 600;
-	color:#1f0207;
+    width: 15%;
 }
 
 /*navigationBar-tabs style*/
