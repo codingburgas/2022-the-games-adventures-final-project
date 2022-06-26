@@ -68,7 +68,7 @@ class AvoidBlock {
         this.height = height;
         this.width = width;
         this.x = canvas.width + width;
-        this.y = 400 - height;
+        this.y = 500 - height;
         this.slideSpeed = speed;
     }
 
@@ -101,7 +101,7 @@ class AvoidBlock {
 
 function startGame() {
     //Allocate memory via function call
-    player = new Player(150,350,50);
+    player = new Player(150,450,50);
     arrayBlocks = [];
     //Initial score number
     score = 0;
@@ -169,7 +169,7 @@ function drawScore() {
     ctx.fillStyle = "black";
     let scoreString = score.toString();
     let xOffset = ((scoreString.length - 1) * 20);
-    ctx.fillText(scoreString, 375 - xOffset, 100);
+    ctx.fillText(scoreString, 580 - xOffset, 100);
 }
 
 
