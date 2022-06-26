@@ -1,4 +1,4 @@
-//Returns a drawing context on the canvas
+//Returns ared drawing context on the canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
 
@@ -16,35 +16,34 @@ let enemySpeed = 0;
 let canScore = true;
 let presetTime = 0;
 
+const playerImage = new Image();
+playerImage.src = 'gameImages/playerImage.png';
+const mushroomImage = new Image();
+mushroomImage.src = 'gameImages/mushroomImage.png';
+const smallRockImage = new Image();
+smallRockImage.src = 'gameImages/smallRock.png';
+const bigRockImage = new Image();
+bigRockImage.src = 'gameImages/bigRock.png';
+
 class Player {
-    constructor(x,y,size,color) {
+    constructor(x,y,size){
         this.x = x;
         this.y = y;
         this.size = size;
-        this.color = color;
-        this.jumpHeight = 17;
+        this.jumpHeight = 13;
         //These 3 are used for jump configuration
         this.shouldJump = false;
         this.jumpCounter = 0;
         this.jumpUp = true;
-        //Related to spin animation
-        this.spin = 0;
-        //Get a perfect 90 degree rotation
-        this.spinIncrement = 90 / 32;
     }
 
     draw() {
         this.jump();
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x,this.y,this.size,this.size);
-        //Reset the rotation so the rotation of other elements is not changed
-        if(this.shouldJump) {
-            this.counterRotation();
-        } 
+        ctx.drawImage(playerImage,this.x - 60,this.y - 137,this.size * 3.5, this.size * 4)
     }
 
     jump() {
-        if(this.shouldJump) {
+        if(this.shouldJump){
             this.jumpCounter++;
             if(this.jumpCounter < 15){
                 //Go up
@@ -55,60 +54,49 @@ class Player {
                 //Come back down
                 this.y += this.jumpHeight;
             }
-            this.rotation();
-            //End the cycle
+                //End the cycle
             if(this.jumpCounter >= 32){
                 //Reset spin ready for another jump
-                this.counterRotation();
-                this.spin = 0;
                 this.shouldJump = false;
             }
         }    
     }
-    
-
-    rotation() {
-        let offsetXPosition = this.x + (this.size / 2);
-        let offsetYPosition = this.y + (this.size / 2);
-        ctx.translate(offsetXPosition,offsetYPosition);
-        //Division is there to convert degrees into radians
-        ctx.rotate(this.spin * Math.PI / 180);
-        ctx.rotate(this.spinIncrement * Math.PI / 180 );
-        ctx.translate(-offsetXPosition,-offsetYPosition);
-        //4.5 because 90 / 20 (number of iterations in jump) is 4.5
-        this.spin += this.spinIncrement;
-    }
-
-    counterRotation() {
-        //This rotates the cube back to its origin so that it can be moved upwards properly
-        let offsetXPosition = this.x + (this.size / 2);
-        let offsetYPosition = this.y + (this.size / 2);
-        ctx.translate(offsetXPosition,offsetYPosition);
-        ctx.rotate(-this.spin * Math.PI / 180 );
-        ctx.translate(-offsetXPosition,-offsetYPosition);
-    }
-
-}  
+}
 
 class AvoidBlock {
-    constructor(width, height, speed){
+    constructor(height, width, speed){
         this.height = height;
         this.width = width;
         this.x = canvas.width + width;
         this.y = 400 - height;
-        this.color = "red";
         this.slideSpeed = speed;
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x,this.y,this.width,this.height);
+        if(this.height > 60 && this.width > 45)
+        {
+            ctx.drawImage(mushroomImage,this.x - this.width + 10 ,this.y  - this.height + 20,this.width * 2.5, this.height * 2.5)
+        }
+        else if(this.height > 60 && this.width <= 45)
+        {
+            ctx.drawImage(mushroomImage,this.x - this.width + 10 ,this.y  - this.height + 20,this.width * 2.5, this.height * 2.5)
+        }
+        else if(this.height <= 60 && this.width > 50)
+        {
+            ctx.drawImage(bigRockImage,this.x - this.width + 26 ,this.y  - this.height + 31,this.width * 2, this.height * 2)
+        }
+        else if(this.height <= 60 && this.width <= 50)
+        {
+            ctx.drawImage(smallRockImage,this.x - this.width + 22.5 ,this.y  - this.height + 38,this.width * 2, this.height * 2)
+        }
+        
     }
 
     slide() {
         this.draw();
         this.x -= this.slideSpeed;
     }
+    
 }
 
 function startGame() {
@@ -181,7 +169,7 @@ function drawScore() {
     ctx.fillStyle = "black";
     let scoreString = score.toString();
     let xOffset = ((scoreString.length - 1) * 20);
-    ctx.fillText(scoreString, 280 - xOffset, 100);
+    ctx.fillText(scoreString, 375 - xOffset, 100);
 }
 
 
@@ -260,4 +248,5 @@ function restartGame(button) {
     button.blur();
     startGame();
     requestAnimationFrame(animate);
+    backgroundID = setInterval(backgroundMovement,1)
 }

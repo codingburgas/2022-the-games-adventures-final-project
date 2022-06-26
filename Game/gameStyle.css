@@ -17,8 +17,9 @@ margin: 0;
 }
 
 #canvas {
-border-radius: 5px;
-background-color: #f0f0f0;
+  border-radius: 5px;
+  background-image: url('gameImages/backgroundImage.png');
+  background-size: cover;
 }
 
 #overlay {
