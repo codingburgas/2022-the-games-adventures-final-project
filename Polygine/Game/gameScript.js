@@ -186,6 +186,22 @@ function shouldIncreaseSpeed() {
     }
 }
 
+let movementSpeed = 0;
+
+function backgroundMovement(){
+    if(enemySpeed == 5)
+    {
+        movementSpeed = movementSpeed - 1.20; 
+    }
+    else
+    {
+        movementSpeed = movementSpeed - 1.20 - (0.24 * (enemySpeed- 5));
+    }
+
+    document.getElementById("canvas").style.backgroundPosition = movementSpeed + "px";
+}
+backgroundID = setInterval(backgroundMovement,1);
+
 let animationId = null;
 
 //Recursive function
@@ -248,5 +264,5 @@ function restartGame(button) {
     button.blur();
     startGame();
     requestAnimationFrame(animate);
-    backgroundID = setInterval(backgroundMovement,1)
+    backgroundID = setInterval(backgroundMovement,1);
 }
