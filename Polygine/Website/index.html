@@ -4,8 +4,10 @@
 
 	<head>
 		<title>Polygine</title>
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<link rel="icon" href="../Images/icon.png">
 		<link rel="stylesheet" href="css/contactStyle.css">
@@ -16,19 +18,24 @@
 	</head>
 
 	<body>
-		<nav>
-			<a href = "index.html"><img id = "logo" src = "" alt = "logo"></a>
+
+		<!--Navigation Bar-->
+		<nav id = navbar>
+			<span id = "logo">Polygine</span>
 
             <ul class = "nav-links" >
-                <li class = "i"><a href = "">about</a></li>
-                <li class = "i"><a href = "">contact</a></li>
+                <li class = "i"><a class = "inactive" href = "#">home</a></li>
+                <li class = "i"><a class = "inactive" href = "#">team</a></li>
+                <li class = "i"><a class = "inactive" href = "#">game</a></li>
             </ul>
-			
+
+			<!--Navigation Bar burger-->
 			<div class="burger">
 				<div class="line1"></div>
 				<div class="line2"></div>
 				<div class="line3"></div>
 			</div>
+			
 		</nav>
 
         <!--contact-->
@@ -238,7 +245,7 @@
         </section>
         <!--contact end-->
 
-		<script src="../JavaScript/navbar.js"></script>
+		<script src="JavaScript/navbar.js"></script>
 		
 	</body>
 

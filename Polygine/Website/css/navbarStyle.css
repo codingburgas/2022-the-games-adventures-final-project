@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/*Navigation Bar*/
+
+nav{
+	display: flex;
+	position: fixed;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	padding: 0.5% 3% 0.5% 3%;
+	background-color: #bab1c238;
+    font-family: 'Heebo', sans-serif;
+	width: 100%;
+	z-index: 100;
+	transition: top 0.3s;
+}
+
+#logo{
+	font-size: 26px;
+	font-family: 'Heebo', sans-serif;
+	font-weight: 600;
+	color:#1f0207;
+}
+
+/*navigationBar-tabs style*/
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+}
+
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links li a{
+    padding: 8px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.4s 0.2s ease-in-out;
+    color: #000;
+}
+
+/*hover animation*/
+
+.nav-links .i::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #913848;
+    display: block;
+    margin: auto;
+    transition: 0.5s 0.2s ease-in;
+}
+
+.nav-links .i:hover::after{
+    width: 25%;
+}
+
+/*burgerIcon style*/
+
+.burger{
+	display: none;
+	cursor: pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: #000;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
