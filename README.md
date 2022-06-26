@@ -1,12 +1,22 @@
 <h1 align = "center"> Polygine </h1>
 
+#🎮 About our game 🎮
+Our team created Jump and Run Game, using HTML, CSS and JavaScript. You have to skip obstacles: mushrooms and rocks. <br> 
+You have to use Space button to jump. An indicator counts your score and shows it when the game is over.
+
 # 💻 Technologies 💻	
 - <b> GitHub: </b>  Collaboration
 - <b> Visual Studio: </b>  As an IDE
 - <b> Microsoft Teams: </b>  Communication
 - <b> Microsoft PowerPoint: </b>  Making presentation
 - <b> Microsoft Word: </b>  Making documentation
- 
+
+# 🚀 Languages 🚀
+<p align="left"> 
+    <img src="https://img.icons8.com/color/48/000000/html-5.png"/> 
+    <img src="https://img.icons8.com/color/48/000000/css3.png"/> 
+    <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
+</p>
 # 👥 Team members 👥    
 - [KNTaligadzhiev19](https://github.com/KNTaligadzhiev19) - Scrum trainer    
    
@@ -30,8 +40,7 @@
       
  
 - [DDPeev21](https://github.com/DDPeev21) - Frontend developer     
-   
-
+    
 # 🛠 Setting up 🛠
 - Clone the repository
  ```cmd
