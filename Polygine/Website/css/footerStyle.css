@@ -57,13 +57,13 @@ hr{
 }
 
 .footer-left{
-    width: 65%;
+    width: 60%;
     margin-top: 2%;
     padding: 0 15px;
 }
 
 .footer-col{
-    width: 35%;
+    width: 40%;
     margin-top: 1.5%;
     padding: 0 15px;
 }
@@ -137,4 +137,23 @@ footer ul{
 .icons p{
     display: inline;
     text-transform: lowercase;
+}
+
+/*responsive style*/
+
+@media(max-width: 1100px){
+    .footer-left .footer-links{
+    display: block;
+  }
+}
+
+@media(max-width: 900px){
+    .footer-col, .footer-left {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .footer-left .footer-links{
+    display: inline;
+  }
 }

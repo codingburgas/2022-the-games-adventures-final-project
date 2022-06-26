@@ -8,7 +8,7 @@
 	min-height: auto;
 	background-color: #ddd;
 	font-family: 'Nunito', sans-serif;
-	padding-top: 15vh;
+	padding-top: 14vh;
 }
 
 .cntr{
@@ -19,7 +19,7 @@
 
 .cnt-section{
 	float: left;
-	width: 55%;
+	width: 57%;
 }
 
 /*Set style to image*/
@@ -81,6 +81,10 @@
 /*Responsiveness*/
 @media screen and (max-width: 1400px)
 {
+	.aboutSection{
+		padding-top: 12vh;
+	}
+
 	.image-section img{
 		margin-top: 10%;
 		width: 120%;
@@ -90,6 +94,11 @@
 }
 
 @media screen and (max-width: 1250px){
+
+	.aboutSection{
+		padding-top: 8vh;
+	}
+
 		.cntr{
 		width: 80%;
 		display: block;
