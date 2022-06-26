@@ -59,15 +59,3 @@ h1{
     justify-content: center;
     background-color: aquamarine;
 }
-/*Add a button font*/
-#button {
-    background-color: #000000;
-    color: #FFFFFF;
-    width: 10px;
-    height: 10px;
-    float: right;
-    padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
