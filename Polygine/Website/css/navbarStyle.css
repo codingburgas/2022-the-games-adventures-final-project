@@ -4,6 +4,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	cursor: url('../images/cursor.png'),auto;
+}
+
+
+::selection {
+	color: #8d4855;
 }
 
 ::-webkit-scrollbar {
@@ -37,7 +43,7 @@ nav{
 }
 
 #logo{
-    width: 15%;
+    width: 50%;
 }
 
 /*navigationBar-tabs style*/
