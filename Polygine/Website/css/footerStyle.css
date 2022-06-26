@@ -12,7 +12,7 @@ footer{
 .row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between  ;
+    justify-content: space-between;
 }
 
 .footerTitle,.row{
@@ -59,4 +59,81 @@ hr{
     width: 65%;
     margin-top: 2%;
     padding: 0 15px;
+}
+
+.footer-col{
+    width: 35%;
+    margin-top: 1.5%;
+    padding: 0 15px;
+}
+
+footer ul{
+    list-style: none;
+}
+
+.footer-col #follow{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize; 
+    font-weight: 500;
+    position: relative;
+    width: fit-content;
+    display: inline;
+}
+
+.footer-col .social-links{
+    width: fit-content;
+    display: inline;
+    margin-left: 10px;
+}
+
+.footer-col ul li a, .cont, .footer-links a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.footer-col ul li a:hover, .footer-links a:hover{
+    color: #ffffff;
+    padding-Left: 8px;
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.icons i{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.icons p{
+    display: inline;
+    text-transform: lowercase;
 }
