@@ -45,18 +45,43 @@ const navSlide = () => {
 }
 
 const toggle = document.getElementById('toggleDark');
-const body = document.querySelector('html');
+const body = document.querySelector('body');
+
+const KNTaligadzhiev19 = document.getElementById('KNTaligadzhiev19');
+const MVMartinov19 = document.getElementById('MVMartinov19');
+const IIDadakov20 = document.getElementById('IIDadakov20');
+const INMichevska20 = document.getElementById('INMichevska20');
+const RIPetkov20 = document.getElementById('RIPetkov20');
+const BSBadalova21 = document.getElementById('BSBadalova21');
+const SPGeorgieva21 = document.getElementById('SPGeorgieva21');
+const DDPeev21 = document.getElementById('DDPeev21');
 
 toggle.addEventListener('click', function() {
     this.classList.toggle('bi-moon');
     if(this.classList.toggle('bi-brightness-high-fill')) {
         body.style.background = 'white';
         body.style.color = 'black';
-        body.style.transition = '2s';
+        KNTaligadzhiev19.style.color = 'black';
+        MVMartinov19.style.color = 'black';
+        IIDadakov20.style.color = 'black';
+        INMichevska20.style.color = 'black';
+        RIPetkov20.style.color = 'black';
+        BSBadalova21.style.color = 'black';
+        SPGeorgieva21.style.color = 'black';
+        DDPeev21.style.color = 'black';
+        body.style.transition = '1s';
     } else {
         body.style.background = 'black';
         body.style.color = 'white';
-        body.style.transition = '2s';
+        KNTaligadzhiev19.style.color = 'white';
+        MVMartinov19.style.color = 'white';
+        IIDadakov20.style.color = 'white';
+        INMichevska20.style.color = 'white';
+        RIPetkov20.style.color = 'white';
+        BSBadalova21.style.color = 'white';
+        SPGeorgieva21.style.color = 'white';
+        DDPeev21.style.color = 'white';
+        body.style.transition = '1s';
     }
 });
 
