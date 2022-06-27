@@ -30,7 +30,7 @@ class Player {
         this.x = x;
         this.y = y;
         this.size = size;
-        this.jumpHeight = 13;
+        this.jumpHeight = 15;
         //These 3 are used for jump configuration
         this.shouldJump = false;
         this.jumpCounter = 0;
