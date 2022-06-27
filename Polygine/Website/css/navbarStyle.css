@@ -100,6 +100,11 @@ nav{
 	transition: all 0.3s ease;
 }
 
+#toggleDark{
+	display: flex;
+    font-size: 30px;
+}
+
 /*responsive style*/
 
 @media screen and (max-width: 1200px){
