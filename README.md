@@ -19,6 +19,7 @@ You have to use Space button to jump. An indicator counts your score and shows i
     <img src="https://img.icons8.com/color/48/000000/css3.png"/> 
     <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
 </p>
+
 # 👥 Team members 👥    
 - [KNTaligadzhiev19](https://github.com/KNTaligadzhiev19) - Scrum trainer    
    
