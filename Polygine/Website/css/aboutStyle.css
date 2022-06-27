@@ -5,7 +5,7 @@
 .aboutSection{
 	width: 100%;
 	display: flex;
-	min-height: 99vh;
+	min-height: auto;
 	background: #a59fa92f;
 	font-family: 'Nunito', sans-serif;
 	padding-top: 14vh;

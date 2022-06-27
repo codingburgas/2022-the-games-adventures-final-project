@@ -157,3 +157,9 @@ footer ul{
     display: inline;
   }
 }
+
+@media(max-width: 700px){
+  .footer-left .footer-links{
+    display: block;
+  }
+}
