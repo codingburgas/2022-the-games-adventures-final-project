@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+	<head>
+		<title>Polygine</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/icon.png">
+		<link rel="stylesheet" href="css/contactStyle.css">
+        <link rel="stylesheet" href="css/footerStyle.css">
+		<link rel="stylesheet" href="css/navbarStyle.css">
+        <link rel="stylesheet" href="css/aboutStyle.css">
+        <link rel="stylesheet" href="css/feedbackStyle.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        
+
+	</head>
+
+	<body>
+		<!--Navigation Bar-->
+		<nav id = navbar>
+			<a href = "index.html"><img id = "logo" src = "Images/logo.png" alt = "logo"></a>
+
+            <ul class = "nav-links" >
+                <li class = "i"><a class = "inactive" href = "#rulesSection">home</a></li>
+                <li class = "i"><a class = "inactive" href = "#teamSection">team</a></li>
+                <li class = "i"><a class = "inactive" href = "../Game/game.html">game</a></li>
+            </ul>
+
+			<!--Navigation Bar burger-->
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			
+            <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+		</nav>
+
+        <!--Navigation Bar end-->
+
+        <!--Feedback-->
+        <div class="popUpBackground"></div>
+
+        <div class="popUpWrapper">
+            <div class="popUpContent">
+
+                <p id="closePopUp">+</p>
+
+                <form action="mailto:IIDadakov20@codingburgas.bg?subject=New feedback" enctype="text/plain" method="post">
+                    <div class="aboutFormColum">
+                        <div class="formInfo">
+                            <div id="formTitleBox">
+                                <h4 id="formTitle">Feedback</h4>
+                            </div>
+                            <div id="lineBox">
+                                <div id="line"></div>
+                            </div>
+                            <div class="inputAndLabelBox">
+                                <input type="text" id="name" name="Name" placeholder="Name" required>
+                                <label for="Name" class="inputLabel">Name</label>
+                            </div>
+                            <div class="inputAndLabelBox">
+                                <input type="email" id="email" name="Email" placeholder="Email">
+                                <label for="Email" class="inputLabel">Email</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="MessageFormColum">
+                        <label for="Feedback" id="messageLabel">Message</label>
+                        <textarea name="Feedback" id="textarea"   placeholder="Write text here..." required></textarea>
+                        <input type="submit" value="SEND MESSAGE" id="submitButton" >
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+        <!--Feedback end-->
+
+        <!--bout section-->
+
+        <section class = "aboutSection" id = "rulesSection">
+            <div class="cntr">
+                <div class="cnt-section">
+                    <div class="title">
+                        <h1>About Our Project</h1>
+                    </div>
+                    <div class="cnt">
+                        <h3>Jump and Run Adventure Game</h3>
+						<br>
+						<h3>Rules</h3>
+                        <p>The rules of the game are not very complicated. You are a little dwarf who is in the forest and has to overcome obstacles like mushrooms and stones without touching them, because otherwise he dies. By pressing "space" you can skip them and continue the game.</p>
+                    </div>
+
+                    <button type="button" class="play" onclick="location.href='../Game/game.html';">Play the game</button>
+                    
+                </div>
+                <div class="image-section">
+                    <img src="images/view.png">
+                </div>
+            </div>
+        </section>
+        <!--about section end-->
+
+        <!--contact-->
+        <section class = "contactSection" id="teamSection">
+            <section class="messageBox">
+                <p>If you want to contact us, you can choose from which social media you want to message us.</p>
+            </section>
+
+            <!--cards-->
+            <section>
+                <div class="container">
+
+                    <!--card 1-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Kostadin.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "KNTaligadzhiev19">Kostadin Taligadzhiev<br><span>Scrum trainer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/KNTaligadzhiev19"><i class="fab fa-github" aria-hidden="true"></i></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:KNTaligadzhiev19@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true""></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!--card 2-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Martin.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "MVMartinov19">Martin Martinov<br><span>Scrum trainer</span></h3>
+                            </div>
+                        </div>
+                        
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/MVMartinov19"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:MVMartinov19@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--card 3-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Ivan.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "IIDadakov20">Ivan Dadakov<br><span>Back-end developer</span></h3>
+                            </div>
+                        </div>
+                        
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/IIDadakov20"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:IIDadakov20@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--card 4-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Iliyana.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "INMichevska20">Iliyana Michevska<br><span>Back-end developer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/INMichevska20"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:INMichevska20@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <!--card 5-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Rumen.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "RIPetkov20">Rumen Petkov<br><span>Back-end developer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/RIPetkov20"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:RIPetkov20@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--card 6-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Bilyana.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "BSBadalova21">Bilyana Badalova<br><span>Front-end developer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/BSBadalova21"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:BSBadalova21@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--card 7-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Stela.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "SPGeorgieva21">Stela Georgieva<br><span>Front-end developer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/SPGeorgieva21"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:SPGeorgieva21@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--card 8-->
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgBox"><img src="images/team/Dobril.png" alt = "image"></div>
+                            <div class="contentBox">
+                                <h3 id = "DDPeev21">Dobril Peev<br><span>Front-end developer</span></h3>
+                            </div>
+                        </div>
+                    
+                        <ul class="sci">
+                            <li>
+                                <a href="https://github.com/DDPeev21"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="mailto:DDPeev21@codingburgas.bg"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--contact end-->
+
+        <!--footer-->
+		<footer>
+			<div class = "footerContainer">
+                
+                <div class = "footerTitle">
+                    
+                    <h3>Polygine</h3>
+                    
+                    <hr>
+                </div>
+                    
+                <div class = "row">
+                    <div class = "footer-left">
+                        
+                        <p class = "footer-copyright">© 2022 <strong>Polygine</strong>
+                        |  All rights reserved</p>
+
+                        <p class = "footer-links">
+                            |
+                            <a href = "#rulesSection">home</a>
+                            |
+                            <a href = "#teamSection">team</a>
+                            |
+                            <a href = "../Game/game.html">game</a>
+                            |
+                            <a id = "feedbackPopUp">Feedback</a>
+                        </p>
+
+                    </div>
+                        
+                    <div class = "footer-col">
+                        <h4 id = "follow">follow us</h4>
+                        <div class = "social-links">
+                            <a href="https://github.com/codingburgas/2122-the-games--adventures-final-project-mvmartinov19"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="to-top">
+				<i class="fas fa-chevron-up"></i>
+			</a>
+		</footer>
+        <!--footer end-->
+
+        <script src="https://kit.fontawesome.com/6ccf48a46a.js" crossorigin="anonymous"></script>
+		<script src="JavaScript/script.js"></script>
+		
+	</body>
+
+</html>
