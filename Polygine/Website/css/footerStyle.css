@@ -1,5 +1,8 @@
 /*Import fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/*footer style*/
+
 footer{
     position: static;
     bottom:0;
@@ -141,7 +144,7 @@ footer ul{
 
 /*responsive style*/
 
-@media(max-width: 1100px){
+@media(max-width: 1250px){
     .footer-left .footer-links{
     display: block;
   }

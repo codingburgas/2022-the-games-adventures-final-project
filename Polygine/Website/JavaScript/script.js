@@ -44,6 +44,8 @@ const navSlide = () => {
 
 }
 
+/*switch between dark and light mode*/
+
 const toggle = document.getElementById('toggleDark');
 const body = document.querySelector('body');
 

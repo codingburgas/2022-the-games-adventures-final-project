@@ -40,6 +40,50 @@
             <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
 		</nav>
 
+        <!--Navigation Bar end-->
+
+        <!--Feedback-->
+        <div class="popUpBackground"></div>
+
+        <div class="popUpWrapper">
+            <div class="popUpContent">
+
+                <p id="closePopUp">+</p>
+
+                <form action="mailto:IIDadakov20@codingburgas.bg?subject=New feedback" enctype="text/plain" method="post">
+                    <div class="aboutFormColum">
+                        <div class="formInfo">
+                            <div id="formTitleBox">
+                                <h4 id="formTitle">Feedback</h4>
+                            </div>
+                            <div id="lineBox">
+                                <div id="line"></div>
+                            </div>
+                            <div class="inputAndLabelBox">
+                                <input type="text" id="name" name="Name" placeholder="Name" required>
+                                <label for="Name" class="inputLabel">Name</label>
+                            </div>
+                            <div class="inputAndLabelBox">
+                                <input type="email" id="email" name="Email" placeholder="Email">
+                                <label for="Email" class="inputLabel">Email</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="MessageFormColum">
+                        <label for="Feedback" id="messageLabel">Message</label>
+                        <textarea name="Feedback" id="textarea"   placeholder="Write text here..." required></textarea>
+                        <input type="submit" value="SEND MESSAGE" id="submitButton" >
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+        <!--Feedback end-->
+
+        <!--bout section-->
+
         <section class = "aboutSection" id = "rulesSection">
             <div class="cntr">
                 <div class="cnt-section">
@@ -59,10 +103,9 @@
                 <div class="image-section">
                     <img src="images/view.png">
                 </div>
-				
-				
             </div>
         </section>
+        <!--about section end-->
 
         <!--contact-->
         <section class = "contactSection" id="teamSection">
