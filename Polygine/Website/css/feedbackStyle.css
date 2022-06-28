@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+.popUpWrapper{
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 100000;
+    transform: translateY(-200%);
+    background-color: transparent;
+    font-family: 'Nunito', sans-serif;
+}
+
+.popUpBackground{
+    position: fixed;
+    display:flex;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 500;
+    display:none;
+    background-color: hsla(0, 0%, 11%, 0.8);
+    opacity:0;
+}
+
+.backgroundAppear{
+    display:block;
+    animation-name: backgroundAppear;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backgroundAppear {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+.visiable{
+    animation-name: appear;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(0.65,.07,.07,1.3);
+}
+
+@keyframes appear{
+    0%{
+        transform: translateY(-200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.notVisiable{
+    animation-name: disAppear;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1.7,.07,.07,0.65);
+}
+
+@keyframes disAppear {
+    0%{
+        transform: translateY(0%);
+    }
+    20%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(-200%);
+    }
+}
