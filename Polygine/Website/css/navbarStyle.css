@@ -196,6 +196,7 @@ nav{
 	opacity: 0;
 	pointer-events: none;
 	transition: all .4s;
+	z-index: 10;
 }
 
 .to-top.active {
