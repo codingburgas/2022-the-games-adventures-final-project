@@ -44,6 +44,27 @@ const navSlide = () => {
 
 }
 
+/*open and close feedback section*/
+
+var feedback = document.getElementById('feedbackPopUp'),
+ popUpWindow = document.querySelector('.popUpWrapper'),
+ popUpbackground = document.querySelector('.popUpBackground'),
+ closeFeedback = document.getElementById('closePopUp');
+
+//function to how the pop up window
+feedback.addEventListener("click", function() {
+    popUpWindow.classList.add('visiable');
+    popUpWindow.classList.remove('notVisiable');
+    popUpbackground.classList.add('backgroundAppear');
+});
+
+//function to close the pop up window
+closeFeedback.addEventListener("click", function() {
+    popUpWindow.classList.add('notVisiable');
+    popUpWindow.classList.remove('visiable');
+    popUpbackground.classList.remove('backgroundAppear');
+});
+
 /*switch between dark and light mode*/
 
 const toggle = document.getElementById('toggleDark');
