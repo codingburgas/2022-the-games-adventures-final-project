@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+/*feedback style*/
+
 .popUpWrapper{
     position: fixed;
     display:flex;
@@ -29,6 +31,8 @@
     background-color: hsla(0, 0%, 11%, 0.8);
     opacity:0;
 }
+
+/*feedback animation*/
 
 .backgroundAppear{
     display:block;
@@ -81,6 +85,8 @@
         transform: translateY(-200%);
     }
 }
+
+/*form style*/
 
 .popUpContent{
     margin-right: 10%;
@@ -206,14 +212,14 @@ input{
 }
 
 #submitButton{
-    width:105%;
+    width:100%;
     height:75px;
     background-color: #555555;
     color:white;
     border:none;
-    font-size: 12px;
+    font-size: 20px;
     letter-spacing: 2px;
-    margin-left: -3%;
+    margin-left: 10%;
 }
 
 #textarea{
@@ -235,6 +241,8 @@ input{
     padding-left: 2px;
 }
 
+/*responsive style*/
+
 @media(max-width: 1400px){
     .popUpContent{
         width:900px;
@@ -243,7 +251,6 @@ input{
 
     #submitButton{
         height:70px;
-        margin-left: -3.2%;
     }
 
     .aboutFormColum{
@@ -259,7 +266,7 @@ input{
 
     #submitButton{
         height:60px;
-        margin-left: -3.4%;
+        font-size: 18px;
     }
 }
 
@@ -278,7 +285,7 @@ input{
     #submitButton{
         height:48px;
         width:110%;
-        margin-left: -3.8%;
+        font-size: 14px;
     }
 
     .inputAndLabelBox{
@@ -308,7 +315,7 @@ input{
 
     #submitButton{
         height:38px;
-        margin-left: -4%;
+        font-size: 12px;
     }
 
     .inputAndLabelBox{
@@ -320,6 +327,5 @@ input{
 
     #submitButton{
         height:38px;
-        margin-left: -5%;
     }
 }

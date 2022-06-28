@@ -11,9 +11,13 @@ html{
 	scroll-behavior: smooth;
 }
 
+/*select style*/
+
 ::selection {
 	color: #8d4855;
 }
+
+/*scrollbar style*/
 
 ::-webkit-scrollbar {
 	width: 8.5px;
